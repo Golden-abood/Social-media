@@ -1,0 +1,8 @@
+@use "vuetify" with (
+  $body-font-family: "Exo 2"
+);
+@import "@mdi/font/css/materialdesignicons.css";
+
+nav {
+  box-shadow: (0, 0, 0 black);
+}

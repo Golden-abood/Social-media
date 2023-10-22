@@ -20,6 +20,8 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.0",
+    "@mdi/font": "^7.3.67",
     "@nuxt/image": "^1.0.0-rc.3",
     "@pinia/nuxt": "^0.5.1",
     "pinia": "^2.1.7",
