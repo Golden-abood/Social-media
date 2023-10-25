@@ -32,6 +32,24 @@
         </div>
       </div>
     </v-card>
+    <div class="bg-[#d9d7d9] px-6 py-6 rounded-lg -my-4">
+      <div v-for="item in post?.comments" class="py-3">
+        <div class="flex items-center gap-x-3">
+          <nuxt-img
+            width="30"
+            class="rounded-full object-fill"
+            :src="item.author.profile_image"
+          ></nuxt-img>
+          <p class="font-bold">{{ item.author.username }}</p>
+        </div>
+        <div class="text-base">{{ item.body }}</div>
+      </div>
+      <v-text-field class="bg-white" variant="outlined">
+        <template #append>
+          <v-icon color="dark" class="mr-3 cursor-pointer">mdi-send </v-icon>
+        </template>
+      </v-text-field>
+    </div>
   </div>
 </template>
 
@@ -41,7 +59,6 @@ import { storeToRefs } from "pinia";
 
 const postStore = usePostStore();
 const { post } = storeToRefs(postStore);
-console.log(post.value);
 const route = useRoute();
 const id: any = route.params.id;
 

@@ -11,21 +11,21 @@
 
         <v-icon @click="emits('close')">mdi-close</v-icon>
       </div>
-      <div class="px-10">
+      <div class="px-10 py-5">
         <v-label class="mb-4"> {{ type.userName }} :</v-label>
         <v-text-field
           v-model="authStore.userName"
           type="text"
           variant="outlined"
         ></v-text-field>
-        <v-label class="mb-4">{{ type.password }} :</v-label>
+        <v-label class="my-4">{{ type.password }} :</v-label>
         <v-text-field
           v-model="authStore.password"
           type="text"
           variant="outlined"
         ></v-text-field>
         <div v-if="type.title === 'Sign up'">
-          <v-label class="mb-4">{{ type.name }} :</v-label>
+          <v-label class="my-4">{{ type.name }} :</v-label>
           <v-text-field
             v-model="authStore.name"
             type="text"
@@ -66,7 +66,6 @@ const loginUser = async () => {
     console.log(err);
   }
 };
-
 const registerUser = async () => {
   try {
     await authStore.register();

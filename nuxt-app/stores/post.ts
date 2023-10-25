@@ -5,7 +5,7 @@ export const usePostStore = defineStore("post", () => {
   const post = ref<Post>();
   let baseUrl = "https://tarmeezacademy.com/api/v1";
   const list = async () => {
-    const res = await fetch(`${baseUrl}/posts?page=380`);
+    const res = await fetch(`${baseUrl}/posts?page=180`);
     const data = await res.json();
     posts.value = data.data;
   };

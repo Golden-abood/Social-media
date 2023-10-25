@@ -22,12 +22,11 @@
           <v-icon>mdi-pencil</v-icon>
           <span>{{ item.comments_count }} Comments</span>
         </div>
-        <div>
-          <span class="bg-[#666] text-white rounded-6">{{
-            item.tags.forEach((e: any) => {
-              e;
-            })
-          }}</span>
+        <div class="flex gap-x-2">
+          <span
+            v-for="tag in item.tags"
+            class="bg-[#666] text-white rounded-6 px-2 py-1 font-normal  "
+          >{{ tag.name }}</span>
         </div>
       </div>
     </v-card>
