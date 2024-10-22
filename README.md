@@ -1,1 +1,1 @@
-# Social-media-CSR-
+# Social-media application
