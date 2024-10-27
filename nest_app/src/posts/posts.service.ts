@@ -1,22 +1,38 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class SongsService {
-  private readonly songs = [
-    { title: 'Music', artist: 'Golden', album: 'Abood' },
-    { title: 'Music', artist: 'Golden', album: 'Abood' },
-    { title: 'Music', artist: 'Golden', album: 'Abood' },
-    { title: 'Music', artist: 'Golden', album: 'Abood' },
-    { title: 'Music', artist: 'Golden', album: 'Abood' },
-    { title: 'Music', artist: 'Golden', album: 'Abood' },
-    { title: 'Music', artist: 'Golden', album: 'Abood' },
+export class PostsService {
+  private readonly posts = [
+    {
+      id: 1,
+      profilePicture: '',
+      image: '',
+      title: 'Golde',
+      body: 'abood',
+      comments: [],
+      createdAt: new Date(),
+    },
+    {
+      id: 2,
+      title: 'Golde',
+      body: 'abood',
+    },
+    {
+      id: 3,
+      title: 'Golde',
+      body: 'abood',
+    },
   ];
 
-  create(song) {
-    this.songs.push(song);
+  create(post) {
+    this.posts.push(post);
   }
 
   findAll() {
-    return this.songs;
+    return this.posts;
+  }
+
+  findById(id: string) {
+    return this.posts.find((post) => post.id === parseInt(id));
   }
 }

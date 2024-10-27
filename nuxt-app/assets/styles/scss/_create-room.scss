@@ -1,0 +1,34 @@
+.create-room {
+  @include box-componente(15, 10, 10);
+  background-color: white;
+  @include flex(space-around, center);
+  img {
+    @include image-rounded(40);
+  }
+  &__button {
+    @include flex(space-between, center, 10);
+    font-size: rem(18);
+    padding: rem(5) rem(15);
+    border: 2px solid #efefef;
+    border-radius: rem(25);
+    -webkit-border-radius: rem(25);
+    -moz-border-radius: rem(25);
+    -ms-border-radius: rem(25);
+    -o-border-radius: rem(25);
+    span {
+      color: #656565;
+    }
+    i {
+      color: $active-color;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .create-room__images img:nth-child(5),
+  .create-room__images img:nth-child(6),
+  .create-room__images img:nth-child(7),
+  .create-room__images img:nth-child(8),
+  .create-room__images img:nth-child(9) {
+    display: none;
+  }
+}

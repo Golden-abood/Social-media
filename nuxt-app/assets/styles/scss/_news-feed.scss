@@ -1,0 +1,55 @@
+.news-feed {
+  @include box-componente(15, 10, 10);
+  background-color: white;
+  &__header {
+    @include flex(space-between, center, 10);
+    &__user-image {
+      @include image-rounded(40);
+    }
+    > div:nth-child(2) {
+      flex: 1;
+    }
+    &__user-name {
+      font-weight: 600;
+    }
+    span {
+      @include flex(left, center, 5);
+      font-size: rem(15);
+      color: #656565;
+    }
+    &__option {
+      font-size: 2rem;
+      position: relative;
+      top: rem(-15);
+      line-height: 0;
+      font-weight: bold;
+    }
+  }
+  &__feed {
+    p,
+    img {
+      margin-top: $primary-padding;
+    }
+    &__image-post img {
+      border-radius: rem(5);
+      -webkit-border-radius: rem(5);
+      -moz-border-radius: rem(5);
+      -ms-border-radius: rem(5);
+      -o-border-radius: rem(5);
+    }
+  }
+  &__footer {
+    @include flex(space-between, center, 10);
+    margin-top: $primary-padding;
+    &__reaction {
+      font-size: 1.2rem;
+    }
+    .comments {
+      color: #656565;
+      font-size: rem(15);
+    }
+  }
+  &__create-comment {
+    margin-top: $primary-padding;
+  }
+}

@@ -1,0 +1,26 @@
+// .page-content {
+//     @include flex(space-between , top);
+
+//     &__left {
+//         flex: 25% 0 0 ;
+//         max-width: rem(360);
+//     }
+//     &__middle {
+//         flex: 50% 0 0 ;
+//         max-width: rem(680);
+//     }
+//     &__right {
+//         flex: 25% 0 0 ;
+//         max-width: rem(360);
+//     }
+// }
+
+// @media (max-width : 768px) {
+//     .page-content__left , .page-content__right{
+//         display: none;
+//     }
+//     .page-content__middle {
+//         max-width: 150%;
+//         margin: 0 auto;
+//     }
+// }

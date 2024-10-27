@@ -1,0 +1,30 @@
+
+.facebook-shortcuts {
+    &__shortcut {
+        @extend %components;
+        i {
+            color: $active-color;
+            font-size: 1.4rem;
+        }
+    }
+}
+h4 {
+    border-top: 1px solid #ccc;
+    padding: $primary-padding;
+    margin: $primary-padding;
+}
+.facebook-favorites {
+    &__favorite {
+        @extend %components;
+        position: relative;
+        overflow: hidden;
+        & div {
+            @include flex(center , center , 10)
+        }
+        img {
+            @include image-rounded(40);
+        }
+    }
+}
+
+

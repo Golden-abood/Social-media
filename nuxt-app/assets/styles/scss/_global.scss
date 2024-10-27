@@ -1,0 +1,79 @@
+@function rem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+$primary-background: #f0f0f0;
+$icon-color: #656565;
+$icon-background-color: #e4e4e4;
+$active-color: #1b75eb;
+$primary-padding: rem(10);
+$sidebar-width: rem(380);
+$content-width: rem(680);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $primary-background;
+}
+.page-content {
+  &__left,
+  &__right {
+    .wrapper {
+      position: sticky;
+      top: rem(100);
+    }
+  }
+}
+@mixin flex($justify: center, $align: center, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: rem($gap);
+}
+@mixin box-round($size, $bg-color) {
+  border: none;
+  height: rem($size);
+  border-radius: rem($size/2);
+  padding: rem($size / 2);
+  background-color: $bg-color;
+  -webkit-border-radius: rem($size/2);
+  -moz-border-radius: rem($size/2);
+  -ms-border-radius: rem($size/2);
+  -o-border-radius: rem($size/2);
+}
+@mixin image-rounded($size) {
+  height: rem($size);
+  width: rem($size);
+  border-radius: 50%;
+  object-fit: cover;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+@mixin circle-img($size) {
+  height: rem($size);
+  width: rem($size);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+%components {
+  @include flex(flex-start, center, 5);
+  padding: $primary-padding;
+  font-weight: 500;
+  font-size: 1rem;
+}
+@mixin box-componente($padding, $margin, $br) {
+  padding: rem($padding);
+  margin: rem($margin);
+  border-radius: rem($br);
+  -webkit-border-radius: rem($br);
+  -moz-border-radius: rem($br);
+  -ms-border-radius: rem($br);
+  -o-border-radius: rem($br);
+}

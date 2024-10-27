@@ -1,13 +1,15 @@
 <template>
-  <div class="flex px-[20px] md:mx-0 min-h-screen bg-[#eee8ff]">
-    <div class="left hidden md:flex min-w-[22.5rem]"></div>
-    <div class="middle mx-auto lg:mx-0 min-w-[90%] lg:min-w-[42.5rem]">
+  <div
+    class="grid grid-cols-3 md:grid-cols-5 justify-items-center px-[20px] md:mx-0 min-h-screen bg-[#f0f0f0]"
+  >
+    <div class="md:col-span-1"></div>
+    <div class="col-span-3">
       <NavBar />
       <div class="pb-16">
         <slot />
       </div>
     </div>
-    <div class="right hidden md:flex min-w-[22.5rem]"></div>
+    <div class="md:col-span-1"></div>
   </div>
 </template>
 

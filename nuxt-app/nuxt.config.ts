@@ -4,26 +4,26 @@ export default defineNuxtConfig({
   modules: [
     "nuxt-icon",
     "@pinia/nuxt",
-    "@unocss/nuxt",
+    "shadcn-nuxt",
     "@nuxt/image",
-    "@nuxtjs/i18n",
-    "@nuxtjs/color-mode",
     "@formkit/auto-animate/nuxt",
+    "@nuxtjs/tailwindcss",
   ],
   image: {
     format: ["webp"],
   },
-  i18n: {
-    vueI18n: "./i18n.config.ts",
-  },
-  /*
-  pinia: {
-    storeDirs: ["./stores/**"],
-  },
-  */
-  css: ["vuetify/lib/styles/main.sass", "~/assets/styles/main.scss"],
-  build: {
-    transpile: ["vuetify"],
+
+  css: ["~/assets/styles/main.scss"],
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: "",
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: "./components/ui",
   },
   vite: {
     define: {
@@ -32,7 +32,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "",
+      title: "Social Media",
       link: [
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {

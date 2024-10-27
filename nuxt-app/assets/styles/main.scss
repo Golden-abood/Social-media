@@ -1,11 +1,10 @@
-@use "vuetify" with (
-  $body-font-family: "Exo 2"
-);
-@import "@mdi/font/css/materialdesignicons.css";
+@import "./scss/_global.scss";
+@import "./scss/page-content.scss";
+@import "./scss/_nav.scss";
+@import "./scss/_facebook-left.scss";
+@import "./scss/_facebook-right.scss";
+@import "./scss/_facebook-middle.scss";
 
 nav {
   box-shadow: (0, 0, 0 black);
-}
-.v-input__details {
-  display: none !important;
 }

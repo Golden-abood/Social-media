@@ -1,12 +1,13 @@
 <template>
-  <v-dialog
+  <div></div>
+  <!-- <v-dialog
     class="w-[100%] md:w-[35%]"
     :model-value="dialog"
     persistent
     transition="fade-transition"
   >
     <v-card class="py-5">
-      <div class="flex px-6 justify-between mb-5">
+      <div class="flex justify-between px-6 mb-5">
         <v-card-title> {{ type.title }} </v-card-title>
 
         <v-icon @click="emits('close')">mdi-close</v-icon>
@@ -45,7 +46,7 @@
         }}</v-btn>
       </div>
     </v-card>
-  </v-dialog>
+  </v-dialog> -->
 </template>
 
 <script setup lang="ts">

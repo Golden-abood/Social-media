@@ -1,16 +1,20 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import { SongsService } from './songs.service';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { PostsService } from './posts.service';
 
-@Controller('songs')
-export class SongsController {
-  constructor(private readonly songsService: SongsService) {}
+@Controller('posts')
+export class PostsController {
+  constructor(private readonly postsService: PostsService) {}
   @Post()
-  async create(@Body() createCatDto) {
-    this.songsService.create(createCatDto);
+  async createPost(@Body() createCatDto) {
+    this.postsService.create(createCatDto);
   }
 
   @Get()
   async findAll() {
-    return this.songsService.findAll();
+    return this.postsService.findAll();
+  }
+  @Get('/:id')
+  async findPostById(@Param('id') id: string) {
+    return this.postsService.findById(id);
   }
 }

@@ -1,9 +1,9 @@
 <template>
   <nav
-    class="w-[100%] bg-white flex justify-between items-center pt-[35px] px-[20px] pb-[20px] rounded-[5px]"
+    class="w-full bg-white flex justify-between items-center pt-[35px] px-[20px] pb-[20px] rounded-[5px]"
   >
-    <div class="flex justify-between items-center">
-      <h2 class="text-base font-semibold mr-8">Golden Abood</h2>
+    <div class="flex items-center justify-between">
+      <h2 class="mr-8 text-base font-semibold">Goldenbook</h2>
       <div class="hidden lg:flex items-center gap-x-[20px]">
         <p>
           <NuxtLink class="text-black no-underline" to="/">Home</NuxtLink>
@@ -16,58 +16,58 @@
       </div>
     </div>
     <div class="flex items-center justify-end">
-      <v-icon class="!lg:hidden cursor-pointer">mdi-menu</v-icon>
-      <div class="hidden lg:flex">
-        <div v-if="token" class="flex">
-          <v-btn
-            variant="outlined"
-            color="success"
+      <!-- <v-icon class="!lg:hidden cursor-pointer">mdi-menu</v-icon> -->
+      <div class="flex">
+        <div v-if="!token" class="flex">
+          <Button
             size="small"
-            class="hover:bg-[#49af41] hover:!text-white font-medium py-1 px-3 text-sm rounded-[6px] border-[1px] border-[#49af41] mr-3"
+            class="bg-[#49af41] !text-white font-medium py-1 px-3 text-sm rounded-[6px] border-[1px] border-[#49af41] mr-3"
             @click="
               dialog = true;
               type = login;
             "
           >
             Login
-          </v-btn>
-          <v-btn
+          </Button>
+          <Button
             variant="outlined"
             color="success"
             size="small"
-            class="hover:bg-[#49af41] hover:!text-white font-medium py-1 px-3 text-sm rounded-[6px] border-[1px] border-[#49af41]"
+            class="bg-[#49af41] !text-white font-medium py-1 px-3 text-sm rounded-[6px] border-[1px] border-[#49af41]"
             @click="
               dialog = true;
               type = register;
             "
           >
             Register
-          </v-btn>
+          </Button>
         </div>
         <div v-else class="flex items-center gap-x-4" id="user-profile">
-          <div class="flex justify-end gap-x-1 items-center">
+          <div class="flex items-center justify-end gap-x-1">
             <img
               src="/images/team-02.jpg"
               class="max-w-[10%] rounded-full onject-fit"
             />
             <span class="text-sm">Golden</span>
           </div>
-          <button
+          <Button
             id="logout-btn"
             class="text-[#ff0000] hover:bg-[#ff0000] hover:text-white font-medium py-1 px-3 text-sm rounded-[6px] border-[1px] border-[#ff0000] mr-3"
             @click="dialog = true"
           >
             logout
-          </button>
+          </Button>
         </div>
       </div>
     </div>
-    <Dialog @close="closeDialog()" :dialog="dialog" :type="type" />
+    <!-- <Dialog @close="closeDialog()" :dialog="dialog" :type="type" /> -->
   </nav>
 </template>
 
 <script setup lang="ts">
-const token = ref(true);
+import type Button from "./ui/button/Button.vue";
+
+const token = ref(false);
 const type = ref();
 const dialog = ref(false);
 

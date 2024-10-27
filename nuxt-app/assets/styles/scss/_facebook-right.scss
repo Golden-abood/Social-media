@@ -1,0 +1,38 @@
+.facebook-sponsers {
+  &__sponser {
+    @include flex(center, center, 10);
+    font-size: rem(12);
+    font-weight: 500;
+    margin: rem(20);
+    text-align: center;
+    img {
+      max-width: 50%;
+      height: 100%;
+      border-radius: rem(5);
+      -webkit-border-radius: rem(5);
+      -moz-border-radius: rem(5);
+      -ms-border-radius: rem(5);
+      -o-border-radius: rem(5);
+    }
+  }
+}
+.sponser {
+  border-top: none !important;
+  padding: rem(10);
+}
+.facebook-pages {
+  &__page {
+    @extend %components;
+    img {
+      @include image-rounded(40);
+    }
+  }
+}
+.facebook-contacts {
+  &__contact {
+    @extend %components;
+    img {
+      @include image-rounded(40);
+    }
+  }
+}

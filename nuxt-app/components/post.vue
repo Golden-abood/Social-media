@@ -1,35 +1,65 @@
 <template>
   <div>
-    <v-card
-      class="post bg-white rounded-lg pa-5 p-[20px] mt-[40px]"
-      @click="$router.push(`posts/${item.id}`)"
-    >
-      <div class="user pb-3 flex items-center gap-x-[20px]">
-        <img :src="item.author.profile_image" class="max-w-[6%] rounded-full" />
-        <h3 class="font-semibold">{{ item.author.name }}</h3>
-      </div>
-      <hr class="bg-[#6666] border-none h-[1px] mx-auto mb-[20px]" />
-      <img :src="item.image" class="w-full rounded-md" />
-      <span class="text-[#666] text-sm">{{ item.created_at }}</span>
-      <div class="text pb-3">
-        <h3 class="text-lg font-semibold py-2">{{ item.title }}</h3>
-        <p class="text-base">{{ item.body }}</p>
-      </div>
-      <hr class="bg-[#6666] border-none h-[1px] mx-auto mb-[20px]" />
-
-      <div class="comments text-sm flex items-center gap-x-4">
-        <div>
-          <v-icon>mdi-pencil</v-icon>
-          <span>{{ item.comments_count }} Comments</span>
+    <div class="cursor-pointer news-feed">
+      <header class="cursor-pointer news-feed__header">
+        <div class="news-feed__header__user-image">
+          <img :src="item.author.profile_image" class="image-rounded" />
         </div>
-        <div class="flex gap-x-2">
-          <span
-            v-for="tag in item.tags"
-            class="bg-[#666] text-white rounded-6 px-2 py-1 font-normal  "
-          >{{ tag.name }}</span>
+        <div class="news-feed__header__post-meta">
+          <div class="news-feed__header__user-name">
+            {{ item?.author.name }}
+          </div>
+          <span>
+            <Icon color="primary" name="material-symbols-light:globe"></Icon>
+            {{ item.created_at }}</span
+          >
         </div>
-      </div>
-    </v-card>
+        <div class="cursor-pointer news-feed__header__option">...</div>
+      </header>
+      <section class="pb-7 news-feed__feed">
+        <p class="news-feed__fee__text">
+          {{ item?.body }}
+        </p>
+        <div class="news-feed__feed__image-post">
+          <img
+            src="../assets/images/video-preview.jpg"
+            id="abood"
+            alt=""
+            style="max-width: 100%; max-height: 40%"
+          />
+        </div>
+      </section>
+      <!-- <footer class="news-feed__footer">
+        <div class="news-feed__footer__reaction flex !gap-x-1">
+          <Icon
+            class="cursor-pointer duration-300 hover:scale-[1.5]"
+            name="material-symbols:thumb-up"
+            color="blue"
+          ></Icon>
+          <Icon
+            class="cursor-pointer duration-300 hover:scale-[1.5] duration-2"
+            name="ic:baseline-favorite"
+            color="red"
+          ></Icon>
+          <Icon
+            class="cursor-pointer duration-300 hover:scale-[1.5] duration-2"
+            name="ic:round-insert-emoticon"
+            color="orange"
+          ></Icon>
+        </div>
+        <div class="comments">19 Comments</div>
+      </footer>
+      <div class="news-feed__create-comment">
+        <div class="input-box__text">
+          <img
+            src="../assets/images/avatar-04.png"
+            alt=""
+            class="image-rounded"
+          />
+          <BaseInput placeholder="Whats on Your Mound , abood" />
+        </div>
+      </div> -->
+    </div>
   </div>
 </template>
 

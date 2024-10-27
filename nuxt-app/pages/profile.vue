@@ -2,6 +2,10 @@
   <div>hello</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  layout: "profile",
+});
+</script>
 
 <style scoped></style>

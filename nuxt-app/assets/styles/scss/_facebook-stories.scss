@@ -1,0 +1,52 @@
+.stories {
+  @include flex(center, center, 5);
+  padding-top: $primary-padding;
+  .story {
+    border-radius: rem(10);
+    -webkit-border-radius: rem(10);
+    -moz-border-radius: rem(10);
+    -ms-border-radius: rem(10);
+    -o-border-radius: rem(10);
+  }
+  @media (max-width: 992px) {
+    .story-6,
+    .story-1 {
+      display: none;
+    }
+    .story {
+      max-width: 150%;
+    }
+  }
+  .story .image-story {
+    @include flex(space-between, flex-start);
+    flex-direction: column;
+    width: rem(100);
+    height: rem(180);
+    margin: unset;
+    padding: rem(10);
+    box-shadow: 0 0 2px #00000020;
+    background-color: #00000040;
+    background-blend-mode: multiply;
+    border-radius: rem(20);
+    -webkit-border-radius: rem(20);
+    -moz-border-radius: rem(20);
+    -ms-border-radius: rem(20);
+    -o-border-radius: rem(20);
+  }
+  img {
+    @include image-rounded(40);
+    border: 2px solid $active-color;
+    outline: 1px solid white;
+  }
+  @for $i from 1 through 6 {
+    .story.story-#{$i} {
+      background-image: url("https://picsum.photos/id/#{$i*random(25)}/100/180");
+    }
+  }
+  .user-name--text {
+    color: white;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px #000000b8;
+    font-size: 0.8rem;
+  }
+}

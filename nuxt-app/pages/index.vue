@@ -1,11 +1,12 @@
 <template>
-  <div
-    class="fixed bottom-5 right-[10%] flex justify-center items-center w-[40px] h-[40px]"
-  >
-    <v-btn icon="mdi-plus" color="#007ffe"></v-btn>
-  </div>
-  <div>
-    <Post v-for="(item, index) in allPosts" :item="item" :key="index" />
+  <div class="pt-5">
+    <CreatePost />
+    <Post
+      v-for="(item, index) in allPosts"
+      :item="item"
+      :key="index"
+      @click="$router.push(`posts/${item.id}`)"
+    />
   </div>
 </template>
 
@@ -16,8 +17,7 @@ import { usePostStore } from "~/stores/post";
 import { storeToRefs } from "pinia";
 const postStore = usePostStore();
 const { posts } = storeToRefs(postStore);
-// let allPosts = ref<Post[]>([]);
-let allPosts = ref([]);
+let allPosts = ref<Post[]>([]);
 const { pending } = useLazyAsyncData(() => postStore.list());
 allPosts.value = posts.value;
 </script>
