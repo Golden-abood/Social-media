@@ -13,8 +13,8 @@ export class PostsController {
   async findAll() {
     return this.postsService.findAll();
   }
-  @Get('/:id')
-  async findPostById(@Param('id') id: string) {
-    return this.postsService.findById(id);
-  }
+  // @Get('/:id')
+  // async findPostById(@Param('id') id: string) {
+  //   return this.postsService.findById(id);
+  // }
 }

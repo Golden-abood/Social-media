@@ -24,6 +24,7 @@
     "@mdi/font": "^7.3.67",
     "@nuxt/image": "^1.0.0-rc.3",
     "@pinia/nuxt": "^0.5.1",
+    "@vueuse/core": "^11.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.453.0",

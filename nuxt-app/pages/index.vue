@@ -3,15 +3,16 @@
     <CreatePost />
     <Post
       v-for="(item, index) in allPosts"
-      :item="item"
+      :post="item"
       :key="index"
+      :is-pointer="true"
       @click="$router.push(`posts/${item.id}`)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-// import { Post } from "~/types";
+import { type Post } from "~/types";
 
 import { usePostStore } from "~/stores/post";
 import { storeToRefs } from "pinia";

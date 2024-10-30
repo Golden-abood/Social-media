@@ -1,38 +1,18 @@
+import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Post } from './schemas/post.schema';
 
 @Injectable()
 export class PostsService {
-  private readonly posts = [
-    {
-      id: 1,
-      profilePicture: '',
-      image: '',
-      title: 'Golde',
-      body: 'abood',
-      comments: [],
-      createdAt: new Date(),
-    },
-    {
-      id: 2,
-      title: 'Golde',
-      body: 'abood',
-    },
-    {
-      id: 3,
-      title: 'Golde',
-      body: 'abood',
-    },
-  ];
+  constructor(@InjectModel(Post.name) private postModel: Model<Post>) {}
 
-  create(post) {
-    this.posts.push(post);
+  async create(createPostDto: any): Promise<Post> {
+    const createdPost = new this.postModel(createPostDto);
+    return createPostDto.save();
   }
 
-  findAll() {
-    return this.posts;
-  }
-
-  findById(id: string) {
-    return this.posts.find((post) => post.id === parseInt(id));
+  async findAll(): Promise<Post[]> {
+    return this.postModel.find().exec();
   }
 }

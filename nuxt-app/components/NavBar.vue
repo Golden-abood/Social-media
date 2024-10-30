@@ -19,28 +19,29 @@
       <!-- <v-icon class="!lg:hidden cursor-pointer">mdi-menu</v-icon> -->
       <div class="flex">
         <div v-if="!token" class="flex">
-          <Button
-            size="small"
-            class="bg-[#49af41] !text-white font-medium py-1 px-3 text-sm rounded-[6px] border-[1px] border-[#49af41] mr-3"
-            @click="
-              dialog = true;
-              type = login;
-            "
-          >
-            Login
-          </Button>
-          <Button
-            variant="outlined"
-            color="success"
-            size="small"
-            class="bg-[#49af41] !text-white font-medium py-1 px-3 text-sm rounded-[6px] border-[1px] border-[#49af41]"
-            @click="
-              dialog = true;
-              type = register;
-            "
-          >
-            Register
-          </Button>
+          <DialogsLogin>
+            <Button
+              variant="ghost"
+              size="sm"
+              class="bg-[#49af41] !text-white font-medium py-1 px-3 text-sm rounded-[6px] border-[1px] border-[#49af41] mr-3"
+              @click="
+                dialog = true;
+                type = login;
+              "
+            >
+              Login
+            </Button>
+          </DialogsLogin>
+          <DialogsRegister>
+            <Button
+              variant="ghost"
+              color="success"
+              size="sm"
+              class="bg-[#49af41] !text-white font-medium py-1 px-3 text-sm rounded-[6px] border-[1px] border-[#49af41]"
+            >
+              Register
+            </Button>
+          </DialogsRegister>
         </div>
         <div v-else class="flex items-center gap-x-4" id="user-profile">
           <div class="flex items-center justify-end gap-x-1">
@@ -60,7 +61,7 @@
         </div>
       </div>
     </div>
-    <!-- <Dialog @close="closeDialog()" :dialog="dialog" :type="type" /> -->
+    <!-- <BaseDialog @close="closeDialog()" :dialog="dialog" :type="type" /> -->
   </nav>
 </template>
 
@@ -70,6 +71,7 @@ import type Button from "./ui/button/Button.vue";
 const token = ref(false);
 const type = ref();
 const dialog = ref(false);
+const isOpened = ref(true);
 
 const closeDialog = () => {
   dialog.value = !dialog.value;
